@@ -29,7 +29,7 @@
     <div>Your Score : <span class="click_score"></span></div>
     <script>
         var a = Math.floor((Math.random() * 102) + 19);
-        wins = 0;
+        var wins = 0;
         var losses = 0;
         let click_score = 0;
         var b = Math.floor((Math.random() * 12) + 1);
@@ -52,15 +52,17 @@
             click_score += b;
         $(".click_score").html(click_score);
         if (click_score === a){
-            wins ++;
+            wins++;
             alert("You Won!");
-            reset()
+            reset();
+            $(".wins").html(wins);
 
         }
         if (click_score > a){
             losses ++;
             alert("You Lost!");  
             reset() 
+            $(".losses").text(losses);
         }
         })
         $(".crdiv1").on("click", function(){
@@ -69,12 +71,14 @@
             if (click_score === a){
             wins ++;
             alert("You Won!");
-            reset()   
+            reset()  
+            $(".wins").html(wins); 
         }
         if (click_score > a){
             losses ++;
             alert("You Lost!");   
             reset()
+            $(".losses").text(losses);
         }
         })
         $(".crdiv2").on("click", function(){
@@ -84,11 +88,13 @@
             wins ++;
             alert("You Won!")
             reset()
+            $(".wins").html(wins);
         }
         if (click_score > a){
             losses ++;
             alert("You Lost!");   
             reset()
+            $(".losses").text(losses);
         }
         })
         $(".crdiv3").on("click", function(){
@@ -98,11 +104,13 @@
             wins ++;
             alert("You Won!")
             reset()
+            $(".wins").html(wins);
         }
         if (click_score > a){
             losses ++;
             alert("You Lost!");
-            reset()   
+            reset()
+            $(".losses").text(losses);   
         }
         })
         
